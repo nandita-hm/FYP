@@ -27,19 +27,19 @@ def main(dataset, algorithm, model, batch_size, learning_rate, beta, lamda, num_
             if(dataset == "Mnist"):
                 model = Mclr_Logistic().to(device), model
             else:
-                model = Mclr_Logistic(60,10).to(device), model
+                model = Mclr_Logistic().to(device), model
                 
         if(model == "cnn"):
             if(dataset == "Mnist"):
                 model = Net().to(device), model
             elif(dataset == "Cifar10"):
-                model = CNNCifar(10).to(device), model
+                model = CNNCifar().to(device), model
             
         if(model == "dnn"):
             if(dataset == "Mnist"):
                 model = DNN().to(device), model
             else: 
-                model = DNN(60,20,10).to(device), model
+                model = DNN().to(device), model
 
         # select algorithm
         if(algorithm == "FedAvg"):
@@ -63,7 +63,7 @@ def main(dataset, algorithm, model, batch_size, learning_rate, beta, lamda, num_
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--dataset", type=str, default="Cifar10", choices=["Mnist", "Synthetic", "Cifar10"])
+    parser.add_argument("--dataset", type=str, default="Cifar10", choices=["Mnist", "Synthetic", "Cifar10","my"])
     parser.add_argument("--model", type=str, default="cnn", choices=["dnn", "mclr", "cnn"])
     parser.add_argument("--batch_size", type=int, default=20)
     parser.add_argument("--learning_rate", type=float, default=0.005, help="Local learning rate")

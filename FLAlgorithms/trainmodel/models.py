@@ -29,7 +29,7 @@ class Net(nn.Module):
         return output
 
 class Mclr_Logistic(nn.Module):
-    def __init__(self, input_dim = 784, output_dim = 10):
+    def __init__(self, input_dim = 2352, output_dim = 10):
         super(Mclr_Logistic, self).__init__()
         self.fc1 = nn.Linear(input_dim, output_dim)
 
@@ -40,7 +40,7 @@ class Mclr_Logistic(nn.Module):
         return output
 
 class Mclr_CrossEntropy(nn.Module):
-    def __init__(self, input_dim = 784, output_dim = 10):
+    def __init__(self, input_dim = 2352, output_dim = 10):
         super(Mclr_CrossEntropy, self).__init__()
         self.linear = torch.nn.Linear(input_dim, output_dim)
 
@@ -50,7 +50,7 @@ class Mclr_CrossEntropy(nn.Module):
         return outputs
 
 class DNN(nn.Module):
-    def __init__(self, input_dim = 784, mid_dim = 100, output_dim = 10):
+    def __init__(self, input_dim = 2352, mid_dim = 100, output_dim = 10):
         super(DNN, self).__init__()
         # define network layers
         self.fc1 = nn.Linear(input_dim, mid_dim)
