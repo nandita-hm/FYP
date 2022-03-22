@@ -12,8 +12,8 @@ torch.manual_seed(0)
 
 if(1): # plot for MNIST convex 
     numusers = 5
-    num_glob_iters = 8
-    dataset = "Mnist"
+    num_glob_iters = 20
+    dataset = "my"
     local_ep = [20,20,20,20]
     lamda = [15,15,15,15]
     learning_rate = [0.005, 0.005, 0.005, 0.005]
